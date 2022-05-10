@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block titke %}Buy{% endblock titke %}
+
+{% block body %}
+
+
+<div class= "container ">
+
+<div class="container mb-3 py-4">
+    <h1 class="text-center" style="background-color: rgb(111, 182, 178);">Informations</h1><br>
+
+    <form method="post" action="/info">
+    {% csrf_token %}
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name" required>
+        </div>
+{% comment %} <br>
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
+        </div> {% endcomment %}
+<br>        
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number" required>
+        </div>      
+<br>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea class="form-control" id="comment" rows="3" name="address" required></textarea>
+        </div>
+<br>
+        <button class="btn btn-primary" type="submit">SUBMIT</button>
+    </form>
+
+</div>
+
+
+
+{% endblock body %}
